@@ -7,7 +7,11 @@ type BoxDefaultProps = {
 };
 
 const BoxDefault = ({ children }: BoxDefaultProps): ReactElement => {
-  return <Container>{children}</Container>;
+  return (
+    <Container>
+      <div data-testid="default-component">{children}</div>
+    </Container>
+  );
 };
 
 export default BoxDefault;

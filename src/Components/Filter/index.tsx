@@ -12,7 +12,7 @@ const Filter = (props: FilterProps): ReactElement => {
   const { searchText, setSearchText } = props;
   return (
     <BoxDefault>
-      <>
+      <div data-testid="component-filter">
         <Title>Filtar dados sobre um país</Title>
 
         <InputBox>
@@ -24,7 +24,7 @@ const Filter = (props: FilterProps): ReactElement => {
             onChange={(e) => setSearchText(e.target.value)}
           />
         </InputBox>
-      </>
+      </div>
     </BoxDefault>
   );
 };

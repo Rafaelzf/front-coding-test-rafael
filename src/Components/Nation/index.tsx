@@ -12,7 +12,7 @@ const Nation = (ctr: CountrieData): ReactElement => {
 
   return (
     <BoxDefault>
-      <>
+      <div data-testid="component-nation">
         <Title>{country}</Title>
 
         <CountriesData>
@@ -29,7 +29,7 @@ const Nation = (ctr: CountrieData): ReactElement => {
             <strong>{formatedDate}</strong>
           </li>
         </CountriesData>
-      </>
+      </div>
     </BoxDefault>
   );
 };
