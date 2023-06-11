@@ -20,6 +20,12 @@ export const Main = styled.main`
   }
 `;
 
+export const ContainerBoxes = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+`;
+
 export const Presentation = styled.div`
   min-height: auto;
   margin-bottom: 40px;

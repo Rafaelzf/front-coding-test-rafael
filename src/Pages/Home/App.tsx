@@ -5,7 +5,14 @@ import { useQuery } from 'react-query';
 import Loading from '../../Assets/loading.gif';
 import { BoxDefault, Filter, Nation, PageDefault } from '../../Components';
 import { baseURL } from '../../Conections';
-import { Container, ErrorText, Main, MainText, Presentation } from './styles';
+import {
+  Container,
+  ErrorText,
+  Main,
+  MainText,
+  Presentation,
+  ContainerBoxes,
+} from './styles';
 
 export interface CountrieData {
   cases: null | number;
@@ -60,7 +67,7 @@ const App = (): ReactElement => {
         <Main>
           {isLoading && (
             <BoxDefault>
-              <img src={Loading} alt="Loading" />
+              <img src={Loading} alt="Loading" title="Loading" />
             </BoxDefault>
           )}
           {!isLoading && error ? (
@@ -70,11 +77,11 @@ const App = (): ReactElement => {
               </ErrorText>
             </BoxDefault>
           ) : (
-            <>
+            <ContainerBoxes data-testid="container-filter">
               <Filter searchText={searchText} setSearchText={setSearchText} />
               {countries &&
                 countries.map((country) => <Nation {...country} key={country.country} />)}
-            </>
+            </ContainerBoxes>
           )}
         </Main>
       </Container>
